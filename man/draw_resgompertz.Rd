@@ -24,7 +24,7 @@ draw_resgompertz(
 
 \item{upper_bound}{The upper bound of the restricted distribution}
 
-\item{seed}{An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.}
+\item{seed}{An integer which will be used to set the seed for this draw.}
 }
 \value{
 Estimate(s) from the restricted Gompertz distribution based on given parameters

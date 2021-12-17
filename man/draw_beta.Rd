@@ -11,7 +11,7 @@ draw_beta(value, se, seed = NULL)
 
 \item{se}{A vector of the standard errors of the means}
 
-\item{seed}{An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.}
+\item{seed}{An integer which will be used to set the seed for this draw.}
 }
 \value{
 A single estimate from the beta distribution based on given parameters

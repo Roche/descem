@@ -8,7 +8,7 @@
 #' @param coef2 Second coefficient of the distribution, defined as in the coef() output on a flexsurvreg object
 #' @param coef3 Third coefficient of the distribution, defined as in the coef() output on a flexsurvreg object
 #' @param hr A hazard ratio
-#' @param seed An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.
+#' @param seed An integer which will be used to set the seed for this draw.
 #'
 #' @return A vector of time to event estimates from the given parameters
 #'
@@ -21,11 +21,9 @@
 
 draw_tte <- function(n_chosen=1,dist='exp',coef1=1,coef2=NULL,coef3=NULL,hr=1,seed=NULL) {
 
-  if(!is.numeric(seed)){
-    seed <- sample(1:100000,1)
+  if(!is.null(seed)){
+    set.seed(seed)
   }
-  set.seed(seed)
-
 
   if (any(length(coef1)>1,length(coef2)>1,length(coef3)>1)) {
     warning("Provided a coefficient parameter that is a vector")
@@ -72,7 +70,7 @@ draw_tte <- function(n_chosen=1,dist='exp',coef1=1,coef2=NULL,coef3=NULL,hr=1,se
 #'
 #' @param value A vector of the mean values
 #' @param se A vector of the standard errors of the means
-#' @param seed An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.
+#' @param seed An integer which will be used to set the seed for this draw.
 #'
 #' @return A single estimate from the beta distribution based on given parameters
 #'
@@ -86,10 +84,9 @@ draw_tte <- function(n_chosen=1,dist='exp',coef1=1,coef2=NULL,coef3=NULL,hr=1,se
 draw_beta <- function(value,se,seed=NULL) {
   out <- NULL
 
-  if(!is.numeric(seed)){
-    seed <- sample(1:100000,1)
+  if(!is.null(seed)){
+    set.seed(seed)
   }
-  set.seed(seed)
 
   for (i in 1:length(value)) {
     value_ch <- value[i]
@@ -109,7 +106,7 @@ draw_beta <- function(value,se,seed=NULL) {
 #'
 #' @param value A vector of the mean values
 #' @param se A vector of the standard errors of the means
-#' @param seed An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.
+#' @param seed An integer which will be used to set the seed for this draw.
 #'
 #' @return A single estimate from the gamma distribution based on given parameters
 #'
@@ -124,10 +121,9 @@ draw_beta <- function(value,se,seed=NULL) {
 draw_gamma <- function(value,se,seed=NULL) {
   out <- NULL
 
-  if(!is.numeric(seed)){
-    seed <- sample(1:100000,1)
+  if(!is.null(seed)){
+    set.seed(seed)
   }
-  set.seed(seed)
 
   for (i in 1:length(value)) {
     value_ch <- value[i]
@@ -149,7 +145,7 @@ draw_gamma <- function(value,se,seed=NULL) {
 #' @param rate The rate parameter of the Gompertz distribution, defined as in the coef() output on a flexsurvreg object
 #' @param lower_bound The lower bound of the restricted distribution
 #' @param upper_bound The upper bound of the restricted distribution
-#' @param seed An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.
+#' @param seed An integer which will be used to set the seed for this draw.
 #'
 #' @return Estimate(s) from the restricted Gompertz distribution based on given parameters
 #'
@@ -162,10 +158,9 @@ draw_gamma <- function(value,se,seed=NULL) {
 
 draw_resgompertz <- function(n, shape, rate , lower_bound = 0, upper_bound = Inf, seed=NULL){
 
-  if(!is.numeric(seed)){
-    seed <- sample(1:100000,1)
+  if(!is.null(seed)){
+    set.seed(seed)
   }
-  set.seed(seed)
 
   quantiles <- flexsurv::pgompertz(c(lower_bound, upper_bound),shape, rate)
   uniform_random_numbers <- stats::runif(n, quantiles[1], quantiles[2])

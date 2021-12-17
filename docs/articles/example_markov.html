@@ -71,6 +71,9 @@
     <li>
       <a href="../articles/example_uncertainty.html">Structural and Parametric Uncertainty</a>
     </li>
+    <li>
+      <a href="../articles/example_ipd.html">Example for Individual Patient Data</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -118,15 +121,14 @@
 
       
 
-      </header><script src="example_markov_files/header-attrs-2.5/header-attrs.js"></script><script src="example_markov_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="example_markov_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="example_markov_files/anchor-sections-1.0/anchor-sections.js"></script><script src="example_markov_files/kePrint-0.0.1/kePrint.js"></script><link href="example_markov_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+      </header><script src="example_markov_files/header-attrs-2.9/header-attrs.js"></script><script src="example_markov_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="example_markov_files/kePrint-0.0.1/kePrint.js"></script><link href="example_markov_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Example for a Markov Model</h1>
                         <h4 class="author">Javier Sanchez Alvarez and Valerie Aponte Ribero</h4>
             
-            <h4 class="date">October 22, 2021</h4>
+            <h4 class="date">December 17, 2021</h4>
       
       
       <div class="hidden name"><code>example_markov.Rmd</code></div>
@@ -156,7 +158,7 @@
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/chjackson/flexsurv-dev">flexsurv</a></span><span class="op">)</span>
 <span class="co">#&gt; Loading required package: survival</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'kableExtra'</span>
@@ -362,8 +364,8 @@
 <span class="co">#&gt; Item cost_v is named. It is strongly advised to assign unnamed objects if they</span>
 <span class="co">#&gt; are going to be processed in the model, as they can create errors depending on</span>
 <span class="co">#&gt; how they are used within the model</span>
-<span class="co">#&gt; [1] "Time to run iteration 1: 0.14s"</span>
-<span class="co">#&gt; [1] "Total time to run: 0.14s"</span></pre></div>
+<span class="co">#&gt; [1] "Time to run iteration 1: 0.12s"</span>
+<span class="co">#&gt; [1] "Total time to run: 0.12s"</span></pre></div>
 </div>
 </div>
 <div id="post-processing-of-model-outputs" class="section level1">

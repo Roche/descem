@@ -71,6 +71,9 @@
     <li>
       <a href="../articles/example_uncertainty.html">Structural and Parametric Uncertainty</a>
     </li>
+    <li>
+      <a href="../articles/example_ipd.html">Example for Individual Patient Data</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -118,15 +121,14 @@
 
       
 
-      </header><script src="example_uncertainty_files/header-attrs-2.5/header-attrs.js"></script><script src="example_uncertainty_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="example_uncertainty_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="example_uncertainty_files/anchor-sections-1.0/anchor-sections.js"></script><script src="example_uncertainty_files/kePrint-0.0.1/kePrint.js"></script><link href="example_uncertainty_files/lightable-0.0.1/lightable.css" rel="stylesheet">
+      </header><script src="example_uncertainty_files/header-attrs-2.9/header-attrs.js"></script><script src="example_uncertainty_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="example_uncertainty_files/kePrint-0.0.1/kePrint.js"></script><link href="example_uncertainty_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Structural and Parametric Uncertainty</h1>
                         <h4 class="author">Javier Sanchez Alvarez and Valerie Aponte Ribero</h4>
             
-            <h4 class="date">October 22, 2021</h4>
+            <h4 class="date">December 17, 2021</h4>
       
       
       <div class="hidden name"><code>example_uncertainty.Rmd</code></div>
@@ -158,7 +160,7 @@
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/chjackson/flexsurv-dev">flexsurv</a></span><span class="op">)</span>
 <span class="co">#&gt; Loading required package: survival</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'kableExtra'</span>
@@ -551,13 +553,13 @@ costs
 100
 </td>
 <td style="text-align:right;">
-269360.91
+267773.27
 </td>
 <td style="text-align:right;">
-4821.59
+4700.54
 </td>
 <td style="text-align:right;">
-1.79
+1.76
 </td>
 </tr>
 <tr>
@@ -568,10 +570,146 @@ costs
 1000
 </td>
 <td style="text-align:right;">
-264683.35
+267713.93
 </td>
 <td style="text-align:right;">
-1686.77
+1413.26
+</td>
+<td style="text-align:right;">
+0.53
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+costs
+</td>
+<td style="text-align:left;">
+2000
+</td>
+<td style="text-align:right;">
+268095.82
+</td>
+<td style="text-align:right;">
+1138.62
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+costs
+</td>
+<td style="text-align:left;">
+5000
+</td>
+<td style="text-align:right;">
+268041.32
+</td>
+<td style="text-align:right;">
+649.45
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICUR
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:right;">
+110868.31
+</td>
+<td style="text-align:right;">
+49310.05
+</td>
+<td style="text-align:right;">
+44.48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICUR
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:right;">
+103467.96
+</td>
+<td style="text-align:right;">
+8909.68
+</td>
+<td style="text-align:right;">
+8.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICUR
+</td>
+<td style="text-align:left;">
+2000
+</td>
+<td style="text-align:right;">
+106108.89
+</td>
+<td style="text-align:right;">
+7601.11
+</td>
+<td style="text-align:right;">
+7.16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ICUR
+</td>
+<td style="text-align:left;">
+5000
+</td>
+<td style="text-align:right;">
+105249.22
+</td>
+<td style="text-align:right;">
+4464.75
+</td>
+<td style="text-align:right;">
+4.24
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lys
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:right;">
+11.83
+</td>
+<td style="text-align:right;">
+0.22
+</td>
+<td style="text-align:right;">
+1.90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lys
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:right;">
+11.82
+</td>
+<td style="text-align:right;">
+0.08
 </td>
 <td style="text-align:right;">
 0.64
@@ -579,16 +717,16 @@ costs
 </tr>
 <tr>
 <td style="text-align:left;">
-costs
+lys
 </td>
 <td style="text-align:left;">
 2000
 </td>
 <td style="text-align:right;">
-263541.35
+11.83
 </td>
 <td style="text-align:right;">
-1197.15
+0.05
 </td>
 <td style="text-align:right;">
 0.45
@@ -596,16 +734,16 @@ costs
 </tr>
 <tr>
 <td style="text-align:left;">
-costs
+lys
 </td>
 <td style="text-align:left;">
 5000
 </td>
 <td style="text-align:right;">
-264060.02
+11.83
 </td>
 <td style="text-align:right;">
-712.04
+0.03
 </td>
 <td style="text-align:right;">
 0.27
@@ -613,155 +751,19 @@ costs
 </tr>
 <tr>
 <td style="text-align:left;">
-ICUR
+qalys
 </td>
 <td style="text-align:left;">
 100
 </td>
 <td style="text-align:right;">
-105736.29
-</td>
-<td style="text-align:right;">
-33903.25
-</td>
-<td style="text-align:right;">
-32.06
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ICUR
-</td>
-<td style="text-align:left;">
-1000
-</td>
-<td style="text-align:right;">
-91975.77
-</td>
-<td style="text-align:right;">
-10129.53
-</td>
-<td style="text-align:right;">
-11.01
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ICUR
-</td>
-<td style="text-align:left;">
-2000
-</td>
-<td style="text-align:right;">
-91203.02
-</td>
-<td style="text-align:right;">
-7587.68
-</td>
-<td style="text-align:right;">
-8.32
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ICUR
-</td>
-<td style="text-align:left;">
-5000
-</td>
-<td style="text-align:right;">
-98332.03
-</td>
-<td style="text-align:right;">
-5176.81
-</td>
-<td style="text-align:right;">
-5.26
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-lys
-</td>
-<td style="text-align:left;">
-100
-</td>
-<td style="text-align:right;">
-11.80
-</td>
-<td style="text-align:right;">
-0.19
-</td>
-<td style="text-align:right;">
-1.64
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-lys
-</td>
-<td style="text-align:left;">
-1000
-</td>
-<td style="text-align:right;">
-11.68
-</td>
-<td style="text-align:right;">
-0.08
-</td>
-<td style="text-align:right;">
-0.66
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-lys
-</td>
-<td style="text-align:left;">
-2000
-</td>
-<td style="text-align:right;">
-11.62
-</td>
-<td style="text-align:right;">
-0.05
-</td>
-<td style="text-align:right;">
-0.46
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-lys
-</td>
-<td style="text-align:left;">
-5000
-</td>
-<td style="text-align:right;">
-11.61
-</td>
-<td style="text-align:right;">
-0.03
+8.87
 </td>
 <td style="text-align:right;">
 0.26
 </td>
-</tr>
-<tr>
-<td style="text-align:left;">
-qalys
-</td>
-<td style="text-align:left;">
-100
-</td>
 <td style="text-align:right;">
-8.86
-</td>
-<td style="text-align:right;">
-0.23
-</td>
-<td style="text-align:right;">
-2.60
+2.92
 </td>
 </tr>
 <tr>
@@ -772,13 +774,13 @@ qalys
 1000
 </td>
 <td style="text-align:right;">
-8.81
+8.90
 </td>
 <td style="text-align:right;">
-0.08
+0.07
 </td>
 <td style="text-align:right;">
-0.96
+0.82
 </td>
 </tr>
 <tr>
@@ -789,13 +791,13 @@ qalys
 2000
 </td>
 <td style="text-align:right;">
-8.77
+8.92
 </td>
 <td style="text-align:right;">
-0.05
+0.06
 </td>
 <td style="text-align:right;">
-0.61
+0.64
 </td>
 </tr>
 <tr>
@@ -806,13 +808,13 @@ qalys
 5000
 </td>
 <td style="text-align:right;">
-8.76
+8.91
 </td>
 <td style="text-align:right;">
-0.02
+0.04
 </td>
 <td style="text-align:right;">
-0.25
+0.40
 </td>
 </tr>
 </tbody>
@@ -903,13 +905,13 @@ costs
 structural
 </td>
 <td style="text-align:right;">
-264683.35
+267713.93
 </td>
 <td style="text-align:right;">
-1686.77
+1413.26
 </td>
 <td style="text-align:right;">
-0.64
+0.53
 </td>
 </tr>
 <tr>
@@ -923,13 +925,13 @@ costs
 structural + parameter
 </td>
 <td style="text-align:right;">
-277167.88
+261495.34
 </td>
 <td style="text-align:right;">
-43773.33
+36669.46
 </td>
 <td style="text-align:right;">
-15.79
+14.02
 </td>
 </tr>
 <tr>
@@ -943,13 +945,13 @@ ICUR
 structural
 </td>
 <td style="text-align:right;">
-91975.77
+103467.96
 </td>
 <td style="text-align:right;">
-10129.53
+8909.68
 </td>
 <td style="text-align:right;">
-11.01
+8.61
 </td>
 </tr>
 <tr>
@@ -963,13 +965,13 @@ ICUR
 structural + parameter
 </td>
 <td style="text-align:right;">
-82092.23
+111981.81
 </td>
 <td style="text-align:right;">
-62873.01
+49446.02
 </td>
 <td style="text-align:right;">
-76.59
+44.16
 </td>
 </tr>
 <tr>
@@ -983,13 +985,13 @@ lys
 structural
 </td>
 <td style="text-align:right;">
-11.68
+11.82
 </td>
 <td style="text-align:right;">
 0.08
 </td>
 <td style="text-align:right;">
-0.66
+0.64
 </td>
 </tr>
 <tr>
@@ -1003,13 +1005,13 @@ lys
 structural + parameter
 </td>
 <td style="text-align:right;">
-11.73
+11.80
 </td>
 <td style="text-align:right;">
-0.45
+0.46
 </td>
 <td style="text-align:right;">
-3.87
+3.88
 </td>
 </tr>
 <tr>
@@ -1023,13 +1025,13 @@ qalys
 structural
 </td>
 <td style="text-align:right;">
-8.81
+8.90
 </td>
 <td style="text-align:right;">
-0.08
+0.07
 </td>
 <td style="text-align:right;">
-0.96
+0.82
 </td>
 </tr>
 <tr>
@@ -1043,13 +1045,13 @@ qalys
 structural + parameter
 </td>
 <td style="text-align:right;">
-8.80
+8.88
 </td>
 <td style="text-align:right;">
-0.32
+0.35
 </td>
 <td style="text-align:right;">
-3.66
+3.91
 </td>
 </tr>
 </tbody>

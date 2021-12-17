@@ -27,7 +27,7 @@ draw_tte(
 
 \item{hr}{A hazard ratio}
 
-\item{seed}{An integer which will be used to set the seed for this draw. If no seed is set a random integer is used.}
+\item{seed}{An integer which will be used to set the seed for this draw.}
 }
 \value{
 A vector of time to event estimates from the given parameters

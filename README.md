@@ -34,7 +34,9 @@ example shows how to run a cohort Markov model while using the same
 modeling framework. Similarly, a simulation based Markov model could be
 run. Structural and parametric uncertainty are explored in the
 [corresponding
-vignette](https://roche.github.io/descem/articles/example_uncertainty.html).
+vignette](https://roche.github.io/descem/articles/example_uncertainty.html). 
+The [IPD vignette](https://roche.github.io/descem/articles/example_ipd.html) shows how descem can be used when individual patient data is available.
+
 
 ## Documentation
 
@@ -51,7 +53,7 @@ repository](https://github.com/Roche/descem).
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("roche/descem")
+devtools::install_github("roche/descem", ref="main")
 ```
 
 ## Citation
